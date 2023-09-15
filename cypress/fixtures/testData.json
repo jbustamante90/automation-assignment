@@ -1,0 +1,20 @@
+{
+  "searchTerm": "oil",
+  "shippingInfo": {
+    "name": "Jose",
+    "lastName": "Bustamante",
+    "address": "st. 123",
+    "city": "Pasadena",
+    "state": "California",
+    "country": "US",
+    "zipCode": "91101"
+  },
+  "cardInfo": {
+    "name": "Jose",
+    "lastName": "Bustamante",
+    "number": "5105105105105100",
+    "expirationMoth": "01",
+    "expirationYear": "2026",
+    "cvv": "123"
+  }
+}
