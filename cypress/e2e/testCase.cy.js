@@ -16,7 +16,13 @@ describe("Test for validating the checkout workflow", () => {
       const cardInfo = data.cardInfo;
 
       homePage.addNthItemToCart(data.searchTerm, 1);
-      homePage.viewCart();
+      homePage.getItemPrice(1).then((price) => {
+        homePage.viewCart();
+        cy.get(viewCartPage.elements.closeAlertButton)
+          .should("be.visible")
+          .click();
+        viewCartPage.getItemPrice().should("eq", price);
+      });
       viewCartPage.gotoCheckout();
       checkoutPage.fillShippingDetails(shippingInfo);
       checkoutPage.fillCardDetails(cardInfo);

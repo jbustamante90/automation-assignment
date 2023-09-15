@@ -1,10 +1,10 @@
 import homePage from "./homePage";
 
 const elements = {
-  userNameInput: "[id*=loginUsername]",
-  continueButton: "[id*=continue-btn]",
-  passwordInput: "[id*=loginPassword]",
-  signinButton: "[id*=login-btn]",
+  userNameInput: "#loginUsername",
+  continueButton: "#continue-btn",
+  passwordInput: "#loginPassword",
+  signinButton: "#login-btn",
   acceptCookiesButton: "[id*=onetrust-accept]",
 };
 

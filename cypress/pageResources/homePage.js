@@ -6,6 +6,7 @@ const elements = {
   viewCartButton: `[data-testid="qa-cartcheckout"]`,
   catalogiFrame: `[data-tagging-id="AW-1070784593"]`,
   catalogWrapper: `[data-testid="qa-catalog-wrappert"]`,
+  listPrice: `[data-testid="qa-product-sale-price"`,
 };
 
 function searchForTerm(searchTerm) {
@@ -13,6 +14,16 @@ function searchForTerm(searchTerm) {
     .should("be.visible")
     .type(searchTerm)
     .type("{enter}");
+}
+
+function getItemPrice(nthElement) {
+  return cy
+    .get(elements.listPrice)
+    .eq(nthElement - 1)
+    .invoke("text")
+    .then((text) => {
+      return text.slice(15);
+    });
 }
 
 function addNthItemToCart(searchTerm, nthElement) {
@@ -31,4 +42,5 @@ export default {
   searchForTerm,
   addNthItemToCart,
   viewCart,
+  getItemPrice,
 };
